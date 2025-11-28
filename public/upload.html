@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Our Love in Pictures 💞</h1>
+
+<!-- Category Navigation -->
+<div id="categoryNav" class="category-nav"></div>
+
+<!-- Upload Section -->
+<form id="uploadForm">
+    <input type="file" id="fileInput" accept="image/*,,video/*" required>
+
+    <select id="categorySelect">
+        <option value="together">Together</option>
+        <option value="aesthetic">Aesthetic</option>
+        <option value="alvin">Alvin</option>
+        <option value="pauline">Pauline</option>
+        
+        
+    </select>
+
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Gallery</h2>
+
+<div id="gallery" class="gallery"></div>
+
+<br>
+<hr><footer> <a>&copy; 2025 ~thee Santos | Made with </a>❤<br> </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
