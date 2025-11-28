@@ -15,6 +15,7 @@ function loadCategories() {
         .then(res => res.json())
         .then(categories => {
             categoryNav.innerHTML = "";
+
             const allBtn = document.createElement("button");
             allBtn.textContent = "All";
             allBtn.className = "cat-btn";
@@ -76,10 +77,16 @@ function showGallery(images) {
         p.textContent = photo.category;
         div.appendChild(p);
 
+        // Delete Button
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.className = "delete-btn";
+        delBtn.addEventListener("click", () => deletePhoto(photo.url));
+        div.appendChild(delBtn);
+
         gallery.appendChild(div);
     });
 }
-
 
 // Upload
 form.addEventListener("submit", e => {
@@ -108,9 +115,9 @@ function deletePhoto(url) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url })
     })
-        .then(res => res.json())
-        .then(() => {
-            loadPhotos();
-            loadCategories();
-        });
+    .then(res => res.json())
+    .then(() => {
+        loadPhotos();
+        loadCategories();
+    });
 }
